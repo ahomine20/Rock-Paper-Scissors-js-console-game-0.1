@@ -1,5 +1,6 @@
 # Rock-Paper-Scissors-js-console-game-0.1
 Here is the Planning:
+
 La maquina elejira una de las opciones de manera aleatoria.
 
 El usuario elejira una de las opciones.
@@ -18,6 +19,7 @@ Se avisa mediante un mensaje el ganador de la partida.
 
 
 Here is the Pseudocode:
+
 La maquina tomara, de manera aleatoria, uno de los valores (Piedra, Papel o Tijeras), el usuario no debe saber cual es el resultado elejido por la maquina.
 
 El usuario debera elejir uno de los valores (Piedra, Papel o Tijeras).
