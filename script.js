@@ -1,39 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
 
-// this funtion compare desitions and alert an statement
-function playRound(getHumanChoice, getComputerChoice) {
-   // let humanScore = 0;
-    // let computerScore = 0;
-    if (getHumanChoice == getComputerChoice) {
-        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
-        return (`It's a tie! We both chose ${getHumanChoice}`);
-    } else if (getHumanChoice == 'piedra' && getComputerChoice == 'tijeras') {
-        ++humanScore;
-        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
-        return (`You won! You chose ${getHumanChoice} and I ${getComputerChoice}`);
-    } else if (getHumanChoice == 'piedra' && getComputerChoice == 'papel') {
-        ++computerScore;
-        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
-        return (`You lose! You chose ${getHumanChoice} and I ${getComputerChoice}`);
-    } else if (getHumanChoice == 'papel' && getComputerChoice == 'piedra') {
-        ++humanScore;
-        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
-        return (`You won! You chose ${getHumanChoice} and I ${getComputerChoice}`);
-    } else if (getHumanChoice == 'papel' && getComputerChoice == 'tijeras') {
-        ++computerScore;
-        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
-        return (`You lose! You chose ${getHumanChoice} and I ${getComputerChoice}`);
-    } else if (getHumanChoice == 'tijeras' && getComputerChoice == 'papel') {
-        ++humanScore;
-        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
-        return (`You won! You chose ${getHumanChoice} and I ${getComputerChoice}`);
-    } else {
-        ++computerScore;
-        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
-        return (`You lose! You chose ${getHumanChoice} and I ${getComputerChoice}`);
-    }
-}
 
 // created a code for a radom computer number that depending on the number range will be assign to a string value
 function getComputerChoice(){
@@ -53,11 +20,53 @@ function getHumanChoice(){
     return hChoiceLowerCase
 }
 
-
-function playGame(playRound){
-
+// this funtion compare desitions and alert an statement
+function playRound(getHumanChoice, getComputerChoice) {
+   // let humanScore = 0;
+    // let computerScore = 0;
+    if (getHumanChoice == getComputerChoice) {
+        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
+        console.log(`It's a tie! We both chose ${getHumanChoice}`);
+    } else if (getHumanChoice == 'piedra' && getComputerChoice == 'tijeras') {
+        ++humanScore;
+        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
+        console.log(`You won! You chose ${getHumanChoice} and I ${getComputerChoice}`);
+    } else if (getHumanChoice == 'piedra' && getComputerChoice == 'papel') {
+        ++computerScore;
+        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
+        console.log(`You lose! You chose ${getHumanChoice} and I ${getComputerChoice}`);
+    } else if (getHumanChoice == 'papel' && getComputerChoice == 'piedra') {
+        ++humanScore;
+        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
+        console.log(`You won! You chose ${getHumanChoice} and I ${getComputerChoice}`);
+    } else if (getHumanChoice == 'papel' && getComputerChoice == 'tijeras') {
+        ++computerScore;
+        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
+        console.log(`You lose! You chose ${getHumanChoice} and I ${getComputerChoice}`);
+    } else if (getHumanChoice == 'tijeras' && getComputerChoice == 'papel') {
+        ++humanScore;
+        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
+        console.log(`You won! You chose ${getHumanChoice} and I ${getComputerChoice}`);
+    } else {
+        ++computerScore;
+        console.log(`Score until now: You: ${humanScore} | Me: ${computerScore}`)
+        console.log(`You lose! You chose ${getHumanChoice} and I ${getComputerChoice}`);
+    }
+}
+//With this i call the game 5 times and show the result at the end
+function playGame(){
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    if (computerScore > humanScore) {
+        console.log('I win hahahaha')
+    } else if (computerScore == humanScore) {
+        console.log('It is a tie')
+    } else (console.log('You win'))
 }
 
 // With this we print the result of the match
 
-console.log(playRound(getHumanChoice(),getComputerChoice()))
+console.log(playGame())
